@@ -28,6 +28,8 @@ function App() {
         board.push(
           <div className={`cell ${classname}`}>
             {r + 1} {String.fromCharCode(start++)}
+            { r == 1 && <div className="black-pawn"></div> }
+            { r == 6 && <div className="white-pawn"></div> }
           </div>
         );
   

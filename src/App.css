@@ -10,10 +10,25 @@
 }
 
 .cell {
-  width: 80px;
-  height: 80px;
+  width: 5rem;
+  height: 5rem;
   border: 1px solid #ddd;
 }
+
+.black-pawn {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+}
+
+.white-pawn {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+}
+
 
 .white {
   background-color: white;
@@ -21,6 +36,6 @@
 }
 
 .black {
-  background-color: black;
+  background-color: #3a3a3a;
   color: white;
 }
