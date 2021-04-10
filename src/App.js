@@ -20,12 +20,14 @@ function App() {
 
   const buildBoard = () => {
     const board = [];
+
     for(let r = 0; r < 8; r++) {
+      let start = 65;
       for (let c = 0; c < 8; c++) {
         const classname = (isEven(r) && isEven(c)) ||  (!isEven(r) && !isEven(c)) ? "white"  : "black";
         board.push(
           <div className={`cell ${classname}`}>
-            {r,c}
+            {r + 1} {String.fromCharCode(start++)}
           </div>
         );
   
