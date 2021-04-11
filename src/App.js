@@ -87,19 +87,11 @@ function App() {
     const pieces = [];
     
     board.forEach((square, i)  => {
-      //const loc = <Square type= {square.type} meta={square} piece={<Pawn type="1"/>} />;
-      // const loc = <Square type= {square.type} meta={square}  />;
       pieces.push(
         <Square type={square.type} meta={square} piece={square.piece} />
      );
-      
     });
 
-
-
-    //  pieces[8].piece = <Pawn type="1" />
-    // board[i + 40].piece = Pawn(1);
-    
 
     return pieces;
   }
