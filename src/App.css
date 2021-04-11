@@ -1,3 +1,7 @@
+html, * {
+  box-sizing: border-box;
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;
@@ -25,9 +29,11 @@
 
 .piece {
   background-repeat: no-repeat;
-  width: 5rem;
-  height: 5rem;
-  background-position-x: center;
+  width: 4rem;
+  height: 4rem;
+  background-position: center;
+  background-size: cover;
+  margin: -10% auto;
 }
 
 .black-pawn {
