@@ -81,9 +81,7 @@ function App() {
         console.log("MATCHED...");
         b.piece = selectedPiece.meta.piece;
         selectedPiece.meta.piece = undefined;
-      } else if (b.index == selectedPiece.meta.index) {
-        // b.piece = {};
-      }
+      } 
       return b;
     });
 
@@ -99,6 +97,14 @@ function App() {
         setSelectedPiece(undefined);
         return;
       }
+
+      // Same type?
+      console.log("PIECE TYPE:", meta?.piece?.type, selectedPiece.meta.piece.type)
+      if (meta.piece?.type == selectedPiece.meta.piece.type) {
+        setSelectedPiece(undefined);
+        return;
+      }
+      
       setSelectedPiece(undefined);
       updateBoard({meta, piece});
     } else {
