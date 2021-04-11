@@ -34,59 +34,54 @@ function App() {
       }
     }
     for(let i = 8; i < 16; i++) {
-      board[i].piece = <Pawn type="1" />
-      board[i + 40].piece = <Pawn type="2" />
+      board[i].piece = { name: "pawn", type: "1"}
+      board[i + 40].piece = {name: "pawn", type: "2"}
     }
 
-    board[0].piece = <Rook type="1" />
-    board[7].piece = <Rook type="1" />
-    board[56].piece = <Rook type="2" />
-    board[63].piece = <Rook type="2" />
+    board[0].piece = { name: "rook", type: "1"}
+    board[7].piece = { name: "rook", type: "1"}
+    board[56].piece = { name: "rook", type: "2"}
+    board[63].piece = { name: "rook", type: "2"}
 
 
-    board[1].piece = <Knight type="1" />
-    board[6].piece = <Knight type="1" />
-    board[57].piece = <Knight type="2" />
-    board[62].piece = <Knight type="2" />
+    board[1].piece = { name: "knight", type: "1"}
+    board[6].piece = { name: "knight", type: "1"}
+    board[57].piece = { name: "knight", type: "2"}
+    board[62].piece = { name: "knight", type: "2"}
 
 
-    board[2].piece = <Bishop type="1" />
-    board[5].piece = <Bishop type="1" />
-    board[58].piece = <Bishop type="2" />
-    board[61].piece = <Bishop type="2" />
+    board[2].piece = { name: "bishop", type: "1"}
+    board[5].piece = { name: "bishop", type: "1"}
+    board[58].piece = { name: "bishop", type: "2"}
+    board[61].piece = { name: "bishop", type: "2"}
 
-    board[3].piece = <Queen type="1" />
-    board[59].piece = <Queen type="2" />
-    board[4].piece = <King type="1" />
-    board[60].piece = <King type="2" />
-
-
+    board[3].piece = { name: "queen", type: "1"}
+    board[59].piece = { name: "queen", type: "2"}
+    board[4].piece = { name: "king", type: "1"}
+    board[60].piece = { name: "king", type: "2"}
 
     return board;
   } 
 
-  const setup = () => {
-    const board = buildBoard();
-    // Setup pawns
-    // for(let i = 8; i < 8 + 8; i++) {
-    //   board[i] = <Pawn type="1"/>
-    // }
-    return board;
-  }
-
   const render = () => {
-    const board = setup();
+    const board = buildBoard();
     console.log({board});
-    const pieces = [];
+    const players = [];
     
     board.forEach((square, i)  => {
-      pieces.push(
-        <Square type={square.type} meta={square} piece={square.piece} />
-     );
+      let piece = undefined; 
+      
+      if (square.piece && pieces[square.piece.name]){
+        piece = <Square type={square.type} meta={square} piece={pieces[square.piece.name](square.piece.type)}  />        
+      } else {
+        piece = <Square type={square.type} meta={square} />        
+      }
+      
+      players.push(
+        piece
+      );
     });
-
-
-    return pieces;
+    return players;
   }
 
   return (
