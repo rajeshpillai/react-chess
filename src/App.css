@@ -19,6 +19,10 @@ html, * {
   border: 1px solid #111;
 }
 
+.selected {
+  border: 4px solid blue;
+}
+
 .piece-container{
   background-position-x: center;
 }

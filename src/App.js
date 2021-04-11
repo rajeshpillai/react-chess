@@ -96,7 +96,6 @@ function App() {
     if (selectedPiece) {
       // If already select, unselect it
       if (meta.index == selectedPiece.meta.index) {
-        console.log("TOGGLE>>>");
         setSelectedPiece(undefined);
         return;
       }
@@ -121,7 +120,9 @@ function App() {
         p = pieces[square.piece.name] (square.piece.type);
       }
 
-      piece = <Square onClick={handleClick} type={square.type} meta={square} piece={p}  />        
+      const active = selectedPiece?.meta.index == square.index;
+
+      piece = <Square onClick={handleClick} type={square.type} meta={square} piece={p} active={active}  />        
       
       players.push(
         piece
