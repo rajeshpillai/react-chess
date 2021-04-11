@@ -25,6 +25,7 @@ function App() {
   const buildBoard = () => {
     const board = [];
 
+    let index = 0;
     for(let r = 0; r < 8; r++) {
       let start = 65;
       for (let c = 0; c < 8; c++) {
@@ -32,6 +33,7 @@ function App() {
         board.push({ 
           row: r,
           col: c,
+          index: index ++, 
           type: classname,
           piece: undefined,
           cell: <Square type= {classname} meta={{row: r, col: c}} />
