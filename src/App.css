@@ -15,6 +15,10 @@
   border: 1px solid #111;
 }
 
+.piece{
+  background-position-x: center;
+}
+
 .pawn {
   background-color: transparent;
 }
@@ -24,11 +28,13 @@
   background-repeat: no-repeat;
   width: 5rem;
   height: 5rem;
+  background-position-x: center;
 }
 
 .white-pawn {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/45/Chess_plt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -36,6 +42,7 @@
 .black-rook {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -43,6 +50,7 @@
 .white-rook {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -50,6 +58,7 @@
 .black-bishop {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/9/98/Chess_bdt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -58,6 +67,7 @@
 .white-bishop {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/b/b1/Chess_blt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -65,6 +75,7 @@
 .black-knight {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/e/ef/Chess_ndt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -72,6 +83,7 @@
 .white-knight {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/70/Chess_nlt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -79,6 +91,7 @@
 .black-king {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/f0/Chess_kdt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -86,6 +99,7 @@
 .white-king {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/42/Chess_klt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -93,6 +107,7 @@
 .black-queen {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/4/47/Chess_qdt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
@@ -100,6 +115,7 @@
 .white-queen {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/1/15/Chess_qlt45.svg);
   background-repeat: no-repeat;
+  background-position-x: center;
   width: 5rem;
   height: 5rem;
 }
