@@ -79,8 +79,9 @@ function App() {
       if (b.index == target.meta.index) {
         console.log("MATCHED...");
         b.piece = selectedPiece.meta.piece;
+        selectedPiece.meta.piece = undefined;
       } else if (b.index == selectedPiece.meta.index) {
-        b.piece = {};
+        // b.piece = {};
       }
       return b;
     });
