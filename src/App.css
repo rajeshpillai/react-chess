@@ -15,6 +15,10 @@
   border: 1px solid #111;
 }
 
+.pawn {
+  background-color: transparent;
+}
+
 .black-pawn {
   background-image: url(https://upload.wikimedia.org/wikipedia/commons/c/c7/Chess_pdt45.svg);
   background-repeat: no-repeat;
@@ -28,6 +32,21 @@
   width: 5rem;
   height: 5rem;
 }
+
+.black-rook {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/f/ff/Chess_rdt45.svg);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+}
+
+.white-rook {
+  background-image: url(https://upload.wikimedia.org/wikipedia/commons/7/72/Chess_rlt45.svg);
+  background-repeat: no-repeat;
+  width: 5rem;
+  height: 5rem;
+}
+
 
 
 .white {
