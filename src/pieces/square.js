@@ -6,7 +6,7 @@ export default function Square({type, meta, piece, onClick, active}) {
   const actClass = active ? 'selected': '';
   return (
     <div className={`cell ${type} ${actClass}`} onClick={() => onClick(meta, piece)}>
-        {meta.row},{meta.col}
+        {meta.index}
         {piece}
     </div>
   )

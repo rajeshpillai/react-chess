@@ -7,6 +7,15 @@ html, * {
   flex-wrap: wrap;
 }
 
+.white {
+  background-color: white;
+  color: black;
+}
+
+.black {
+  background-color: #769656;
+  color: white;
+}
 
 .board{
   display: grid;
@@ -90,12 +99,3 @@ html, * {
 }
 
 
-.white {
-  background-color: white;
-  color: black;
-}
-
-.black {
-  background-color: #bdd2b6;
-  color: white;
-}
