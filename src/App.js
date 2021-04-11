@@ -96,12 +96,14 @@ function App() {
     if (selectedPiece) {
       // If already select, unselect it
       if (meta.index == selectedPiece.meta.index) {
+        console.log("TOGGLE>>>");
         setSelectedPiece(undefined);
         return;
       }
       setSelectedPiece(undefined);
       updateBoard({meta, piece});
     } else {
+      if (!piece) return;
       setSelectedPiece({meta, piece});
     }
   }
