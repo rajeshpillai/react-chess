@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
+import {Pawn} from './pieces/pawn';
+
 function loadGameState() {
   const data = [];
   for(let i = 0; i < 8; i++) {
@@ -22,15 +24,6 @@ function Square({type, meta, piece}) {
   )
 }
 
-
-function Pawn({type}) {
-  return (
-    <div className="rook">
-      { type == 1 && <div className="black-pawn"></div> }
-      { type == 2 && <div className="white-pawn"></div> }
-    </div>
-  )
-}
 
 function Rook({type}) {
   return (
