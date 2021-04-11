@@ -14,6 +14,12 @@ const pieces = {
 }
 
 function App() {
+  const [board, setBoard] = useState([]);
+
+  useEffect(() => {
+    setBoard(buildBoard())
+  }, [])
+
   const isEven = (num) => num % 2;
 
   const buildBoard = () => {
@@ -64,7 +70,7 @@ function App() {
   } 
 
   const render = () => {
-    const board = buildBoard();
+    // const board = buildBoard();
     console.log({board});
     const players = [];
     
