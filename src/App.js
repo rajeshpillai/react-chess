@@ -4,23 +4,7 @@ import './App.css';
 import {Square, King, Queen, Rook, Bishop, Knight, Pawn} from './pieces';
 
 
-function loadGameState() {
-  const data = [];
-  for(let i = 0; i < 8; i++) {
-    for (let j = 0; j < 8; j++) {
-      data.push({i, j});
-    }
-  }
-
-  return data;
-}
-
-
-
 function App() {
-  const [gameState, setGameState] = 
-        useState(loadGameState());
-
   const isEven = (num) => num % 2;
 
   const buildBoard = () => {
