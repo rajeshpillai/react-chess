@@ -69,6 +69,11 @@ function App() {
     return board;
   } 
 
+  
+  const handleClick = (meta, piece) => {
+    console.log(meta, piece);
+  }
+
   const render = () => {
     // const board = buildBoard();
     console.log({board});
@@ -76,12 +81,13 @@ function App() {
     
     board.forEach((square, i)  => {
       let piece = undefined; 
-      
+      let p = undefined; 
+
       if (square.piece && pieces[square.piece.name]){
-        piece = <Square type={square.type} meta={square} piece={pieces[square.piece.name](square.piece.type)}  />        
-      } else {
-        piece = <Square type={square.type} meta={square} />        
+        p = pieces[square.piece.name] (square.piece.type);
       }
+
+      piece = <Square onClick={handleClick} type={square.type} meta={square} piece={p}  />        
       
       players.push(
         piece
