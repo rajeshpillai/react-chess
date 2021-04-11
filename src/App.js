@@ -15,12 +15,12 @@ const pieces = {
 
 function App() {
   const [board, setBoard] = useState([]);
-  const [selected, toggleSelect] = useState(false);
-  const [selectedPiece, setSelectedPiece] = useState();
+  const [selectedPiece, setSelectedPiece] = useState(undefined);
 
   useEffect(() => {
     setBoard(buildBoard())
   }, [])
+
 
   // Even or Odd
   const isEven = (num) => num % 2;
@@ -51,26 +51,22 @@ function App() {
     }
 
     board[0].piece = { name: "rook", type: "1"}
-    board[7].piece = { name: "rook", type: "1"}
-    board[56].piece = { name: "rook", type: "2"}
-    board[63].piece = { name: "rook", type: "2"}
-
-
     board[1].piece = { name: "knight", type: "1"}
-    board[6].piece = { name: "knight", type: "1"}
-    board[57].piece = { name: "knight", type: "2"}
-    board[62].piece = { name: "knight", type: "2"}
-
-
     board[2].piece = { name: "bishop", type: "1"}
-    board[5].piece = { name: "bishop", type: "1"}
-    board[58].piece = { name: "bishop", type: "2"}
-    board[61].piece = { name: "bishop", type: "2"}
-
     board[3].piece = { name: "queen", type: "1"}
-    board[59].piece = { name: "queen", type: "2"}
     board[4].piece = { name: "king", type: "1"}
+    board[5].piece = { name: "bishop", type: "1"}
+    board[6].piece = { name: "knight", type: "1"}
+    board[7].piece = { name: "rook", type: "1"}
+    
+    board[56].piece = { name: "rook", type: "2"}
+    board[57].piece = { name: "knight", type: "2"}
+    board[58].piece = { name: "bishop", type: "2"}
+    board[59].piece = { name: "queen", type: "2"}
     board[60].piece = { name: "king", type: "2"}
+    board[61].piece = { name: "bishop", type: "2"}
+    board[62].piece = { name: "knight", type: "2"}
+    board[63].piece = { name: "rook", type: "2"}
 
     return board;
   } 
@@ -78,11 +74,13 @@ function App() {
   // Set piece
   const updateBoard = (target) => {
     console.log("Update: ", {selectedPiece}, {target});
+
     const updatedBoard = board.map(b => {
       if (b.index == target.meta.index) {
         console.log("MATCHED...");
         b.piece = selectedPiece.meta.piece;
-
+      } else if (b.index == selectedPiece.meta.index) {
+        b.piece = {};
       }
       return b;
     });
@@ -93,19 +91,16 @@ function App() {
   // Handle square click
   const handleClick = (meta, piece) => {
     console.log(meta, piece);
-    if (selected) {
-      toggleSelect(false);
+    if (selectedPiece) {
       setSelectedPiece(undefined);
       updateBoard({meta, piece});
     } else {
-      toggleSelect(true);
       setSelectedPiece({meta, piece});
     }
   }
 
   // Build UI based on state
   const render = () => {
-    // const board = buildBoard();
     console.log({board});
     const players = [];
     
