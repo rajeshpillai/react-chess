@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-import {Pawn} from './pieces/pawn';
+import {Square, King, Queen, Rook, Bishop, Knight, Pawn} from './pieces';
+
 
 function loadGameState() {
   const data = [];
@@ -14,25 +15,6 @@ function loadGameState() {
   return data;
 }
 
-// Square component (container for pieces)
-function Square({type, meta, piece}) {
-  return (
-    <div className={`cell ${type}`}>
-        {meta.row},{meta.col}
-        {piece}
-    </div>
-  )
-}
-
-
-function Rook({type}) {
-  return (
-    <div className="rook">
-      { type == 1 && <div className="black-rook"></div> }
-      { type == 2 && <div className="white-rook"></div> }
-    </div>
-  )
-}
 
 
 function App() {
@@ -67,6 +49,25 @@ function App() {
     board[7].piece = <Rook type="1" />
     board[56].piece = <Rook type="2" />
     board[63].piece = <Rook type="2" />
+
+
+    board[1].piece = <Knight type="1" />
+    board[6].piece = <Knight type="1" />
+    board[57].piece = <Knight type="2" />
+    board[62].piece = <Knight type="2" />
+
+
+    board[2].piece = <Bishop type="1" />
+    board[5].piece = <Bishop type="1" />
+    board[58].piece = <Bishop type="2" />
+    board[61].piece = <Bishop type="2" />
+
+    board[3].piece = <Queen type="1" />
+    board[59].piece = <Queen type="2" />
+    board[4].piece = <King type="1" />
+    board[60].piece = <King type="2" />
+
+
 
     return board;
   } 

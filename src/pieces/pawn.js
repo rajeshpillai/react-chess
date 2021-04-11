@@ -1,6 +1,6 @@
 import React from 'react';
 
-export function Pawn({type}) {
+export default function Pawn({type}) {
   return (
     <div className="rook">
       { type == 1 && <div className="black-pawn"></div> }
