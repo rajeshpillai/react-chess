@@ -15,13 +15,17 @@ const pieces = {
 
 function App() {
   const [board, setBoard] = useState([]);
+  const [selected, toggleSelect] = useState(false);
+  const [selectedPiece, setSelectedPiece] = useState();
 
   useEffect(() => {
     setBoard(buildBoard())
   }, [])
 
+  // Even or Odd
   const isEven = (num) => num % 2;
 
+  
   const buildBoard = () => {
     const board = [];
 
@@ -36,7 +40,7 @@ function App() {
           index: index ++, 
           type: classname,
           piece: undefined,
-          cell: <Square type= {classname} meta={{row: r, col: c}} />
+          // cell: <Square type= {classname} meta={{row: r, col: c}} />
 
         });
       }
@@ -71,11 +75,35 @@ function App() {
     return board;
   } 
 
-  
-  const handleClick = (meta, piece) => {
-    console.log(meta, piece);
+  // Set piece
+  const updateBoard = (target) => {
+    console.log("Update: ", {selectedPiece}, {target});
+    const updatedBoard = board.map(b => {
+      if (b.index == target.meta.index) {
+        console.log("MATCHED...");
+        b.piece = selectedPiece.meta.piece;
+
+      }
+      return b;
+    });
+
+    setBoard(updatedBoard);
   }
 
+  // Handle square click
+  const handleClick = (meta, piece) => {
+    console.log(meta, piece);
+    if (selected) {
+      toggleSelect(false);
+      setSelectedPiece(undefined);
+      updateBoard({meta, piece});
+    } else {
+      toggleSelect(true);
+      setSelectedPiece({meta, piece});
+    }
+  }
+
+  // Build UI based on state
   const render = () => {
     // const board = buildBoard();
     console.log({board});
