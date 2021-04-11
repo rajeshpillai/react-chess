@@ -17,6 +17,7 @@ const pieces = {
 function App() {
   const [board, setBoard] = useState([]);
   const [selectedPiece, setSelectedPiece] = useState(undefined);
+  const [rotate, toggleRotate] = useState(false);
 
   useEffect(() => {
     setBoard(buildBoard())
@@ -86,6 +87,7 @@ function App() {
     });
 
     setBoard(updatedBoard);
+    toggleRotate(flag => !flag);
   }
 
   // Handle square click
@@ -128,7 +130,7 @@ function App() {
 
       const active = selectedPiece?.meta.index == square.index;
 
-      piece = <Square onClick={handleClick} type={square.type} meta={square} piece={p} active={active}  />        
+      piece = <Square onClick={handleClick} rotate={rotate} type={square.type} meta={square} piece={p} active={active}  />        
       
       players.push(
         piece
@@ -137,9 +139,10 @@ function App() {
     return players;
   }
 
+  const rot = rotate ? "rotate" : "";
   return (
     <div className="container">
-      <div className="board">
+      <div className={`board ${rot}`}>
        {render()} 
        </div>
     </div>
