@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import './styles/animate.css';
 import './App.css';
 
 import {Square, King, Queen, Rook, Bishop, Knight, Pawn} from './pieces';
