@@ -93,6 +93,11 @@ function App() {
   const handleClick = (meta, piece) => {
     console.log(meta, piece);
     if (selectedPiece) {
+      // If already select, unselect it
+      if (meta.index == selectedPiece.meta.index) {
+        setSelectedPiece(undefined);
+        return;
+      }
       setSelectedPiece(undefined);
       updateBoard({meta, piece});
     } else {
