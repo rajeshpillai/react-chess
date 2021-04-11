@@ -4,6 +4,15 @@ import './App.css';
 import {Square, King, Queen, Rook, Bishop, Knight, Pawn} from './pieces';
 
 
+const pieces = {
+  pawn: (type) => <Pawn type={type} />,
+  rook: (type) => <Rook type={type} />,
+  knight: (type) => <Knight type={type} />,
+  bishop: (type) => <Bishop type={type} />,
+  queen: (type) => <Queen type={type} />,
+  king: (type) => <King type={type} />,
+}
+
 function App() {
   const isEven = (num) => num % 2;
 
