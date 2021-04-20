@@ -87,7 +87,7 @@ function App() {
     });
 
     setBoard(updatedBoard);
-    toggleRotate(flag => !flag);
+    // toggleRotate(flag => !flag);
   }
 
   // Handle square click
@@ -144,9 +144,13 @@ function App() {
     <div className="container">
       <div className={`board ${rot}`}>
        {render()} 
-       </div>
+      </div>
+      <div className="stats">
+        <h4>Moves</h4>
+      </div>
     </div>
   );
 }
 
 export default App;
+

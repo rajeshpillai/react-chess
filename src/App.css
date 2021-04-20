@@ -7,6 +7,25 @@ html, * {
   flex-wrap: wrap;
 }
 
+.board{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+}
+
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  color: white;
+  background-color: black;
+}
+
+.stats h4 {
+  border-bottom: 1px dashed white;
+}
+
 .white {
   background-color: white;
   color: black;
@@ -18,15 +37,14 @@ html, * {
   color: white;
 }
 
-.board{
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-}
-
 .cell {
   width: 5rem;
   height: 5rem;
   border: 1px solid #111;
+}
+
+.meta-idx{
+  color:gray;
 }
 
 .selected {

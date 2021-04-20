@@ -5,9 +5,11 @@ import React from 'react';
 export default function Square({type, meta, piece, onClick, active, rotate}) {
   const actClass = active ? 'selected': '';
   const rot = rotate ? "rotate" : "";
+
+
   return (
     <div className={`cell ${type} ${actClass} ${rot}`} onClick={() => onClick(meta, piece)}>
-        {meta.index}
+        <span className="meta-idx">{meta.index}</span>
         {piece}
     </div>
   )
